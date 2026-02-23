@@ -1,0 +1,80 @@
+plugins {
+    id "net.serenity-bdd.serenity-gradle-plugin" version "4.0.12"
+    id 'java'
+    id 'idea'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+ext {
+    serenityCoreVersion = '4.0.12'
+    appiumVersion = '8.6.0'
+    junitVersion = '5.10.0'
+    assertJVersion = '3.24.0'
+    logbackVersion = '1.4.10'
+    slf4jVersion='2.0.6'
+    junitPlatform='1.10.0'
+    cucumberCoreVersion='7.14.0'
+    lombokVersion   = "1.18.36"
+
+}
+
+repositories {
+    mavenCentral()
+    flatDir {
+        dirs 'src/lib'
+    }
+}
+
+defaultTasks 'clean','test','aggregate'
+
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+
+dependencies {
+    implementation  "net.serenity-bdd:serenity-cucumber:${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-core:${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-screenplay:${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-screenplay-webdriver:${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-screenplay-rest:${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-ensure:${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-junit5:${serenityCoreVersion}",
+            "org.junit.jupiter:junit-jupiter-engine:${junitVersion}",
+            "io.appium:java-client:${appiumVersion}",
+            "org.assertj:assertj-core:${assertJVersion}",
+            "ch.qos.logback:logback-classic:${logbackVersion}"
+    testImplementation "org.junit.platform:junit-platform-launcher:${junitPlatform}",
+            "org.junit.platform:junit-platform-suite:${junitPlatform}",
+            "org.junit.platform:junit-platform-suite-api:${junitPlatform}",
+            "org.junit.vintage:junit-vintage-engine:${junitPlatform}",
+            "io.cucumber:cucumber-junit-platform-engine:${cucumberCoreVersion}",
+            "io.cucumber:cucumber-core:${cucumberCoreVersion}"
+    //implementation files('src/lib/libreriaMovilScreenPlay-2.0.2.jar')
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
+    compileOnly "org.projectlombok:lombok:${lombokVersion}"
+    annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+
+    testCompileOnly "org.projectlombok:lombok:${lombokVersion}"
+    testAnnotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+}
+
+test {
+   // useJUnitPlatform()
+    systemProperty "serenity.logging", "VERBOSE"
+    systemProperty "serenity.verbose.logging", "true"
+
+    testLogging.showStandardStreams = true
+    systemProperties System.getProperties()
+}
+
+serenity {
+    reports = ["single-page-html"]
+}
+
+gradle.startParameter.continueOnFailure = true
+
+test.finalizedBy(aggregate, reports)

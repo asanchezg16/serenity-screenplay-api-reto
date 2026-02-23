@@ -1,0 +1,16 @@
+package runners;
+
+import io.cucumber.junit.CucumberOptions;
+import net.serenitybdd.cucumber.CucumberWithSerenity;
+import org.junit.runner.RunWith;
+
+@RunWith(CucumberWithSerenity.class)
+@CucumberOptions(
+        features = "src/test/resources/features/web",
+        glue = {"stepdefinitions", "stepdefinitions.conf"},
+        tags = "@web and not @ignore",
+        plugin = {"pretty"}
+)
+
+public class WebTestSuite {
+}

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class API de Rick and Morty</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class API de Rick and Morty</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/default-package.html">default-package</a> &gt; API de Rick and Morty</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">5</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">3.771s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="tab-container">
+<ul class="tabLinks">
+<li>
+<a href="#">Tests</a>
+</li>
+<li>
+<a href="#">Standard output</a>
+</li>
+</ul>
+<div class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">Buscar personajes con filtros</td>
+<td class="success">0.619s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Buscar personajes por nombre</td>
+<td class="success">0.320s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Consultar personaje inexistente</td>
+<td class="success">0.293s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Obtener lista de personajes</td>
+<td class="success">2.202s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Obtener un personaje específico</td>
+<td class="success">0.337s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre id="class-stdout">
+@api @rickandmorty @get_all_characters
+Escenario: Obtener lista de personajes            ?[90m# src/test/resources/features/api/RickAndMorty.feature:10?[0m
+10:48:04.416 [Test worker] INFO   - 
+  _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
+ |_   _| | __| / __| |_   _|   / __| |_   _|   /_\   | _ \ |_   _| | __| |   \ 
+   | |   | _|  \__ \   | |     \__ \   | |    / _ \  |   /   | |   | _|  | |) |
+   |_|   |___| |___/   |_|     |___/   |_|   /_/ \_\ |_|_\   |_|   |___| |___/ 
+
+Obtener lista de personajes(api-de-rick-and-morty;obtener-lista-de-personajes)
+--------------------------------------------------------------------------------
+10:48:04.454 [Test worker] INFO   - ?[92m|-- Cuando consulto la lista de personajes?[0m
+10:48:04.581 [Test worker] INFO   - ?[92m|---- Usuario api get characters?[0m
+10:48:04.619 [Test worker] INFO   - ?[92m|------ Usuario API executes a GET on the resource /character?[0m
+  ?[32mCuando ?[0m?[32mconsulto la lista de personajes?[0m          ?[90m# stepdefinitions.api.RickAndMortySteps.consultoLaListaDePersonajes()?[0m
+10:48:06.246 [Test worker] INFO   - ?[92m|-- Entonces el código de respuesta debería ser 200?[0m
+10:48:06.289 [Test worker] INFO   - ?[92m|---- Then El c&amp;oacute;digo de estado should be (200)?[0m
+  ?[32mEntonces ?[0m?[32mel código de respuesta debería ser ?[0m?[32m?[1m200?[0m ?[90m# stepdefinitions.api.RickAndMortySteps.elCodigoDeRespuestaDeberiaSer(java.lang.Integer)?[0m
+10:48:06.294 [Test worker] INFO   - ?[92m|-- Y la respuesta debería contener personajes?[0m
+10:48:06.298 [Test worker] INFO   - ?[92m|---- Then La respuesta contiene personajes should be a string containing '\'results\''?[0m
+  ?[32mY ?[0m?[32mla respuesta debería contener personajes?[0m      ?[90m# stepdefinitions.api.RickAndMortySteps.laRespuestaDeberiaContenerPersonajes()?[0m
+10:48:06.302 [Test worker] INFO   - ?[92m|-- Y el campo &quot;info.count&quot; debería ser mayor a 0?[0m
+10:48:06.305 [Test worker] INFO   - ?[92m|---- Then El campo info.count should be a value greater than (0)?[0m
+  ?[32mY ?[0m?[32mel campo ?[0m?[32m?[1m&quot;info.count&quot;?[0m?[32m debería ser mayor a ?[0m?[32m?[1m0?[0m   ?[90m# stepdefinitions.api.RickAndMortySteps.elCampoDeberiaSerMayorA(java.lang.String,java.lang.Integer)?[0m
+10:48:06.525 [Test worker] INFO   - ?[92m
+  _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
+ |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 
+   | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
+   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
+
+Obtener lista de personajes
+----------------------------------------------------------------------?[0m
+
+@api @rickandmorty @get_character_by_id
+Escenario: Obtener un personaje específico        ?[90m# src/test/resources/features/api/RickAndMorty.feature:17?[0m
+10:48:06.539 [Test worker] INFO   - 
+  _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
+ |_   _| | __| / __| |_   _|   / __| |_   _|   /_\   | _ \ |_   _| | __| |   \ 
+   | |   | _|  \__ \   | |     \__ \   | |    / _ \  |   /   | |   | _|  | |) |
+   |_|   |___| |___/   |_|     |___/   |_|   /_/ \_\ |_|_\   |_|   |___| |___/ 
+
+Obtener un personaje específico(api-de-rick-and-morty;obtener-un-personaje-específico)
+--------------------------------------------------------------------------------
+10:48:06.550 [Test worker] INFO   - ?[92m|-- Cuando consulto el personaje con ID 1?[0m
+10:48:06.556 [Test worker] INFO   - ?[92m|---- Usuario api get character by?[0m
+10:48:06.557 [Test worker] INFO   - ?[92m|------ Usuario API executes a GET on the resource /character/1?[0m
+  ?[32mCuando ?[0m?[32mconsulto el personaje con ID ?[0m?[32m?[1m1?[0m           ?[90m# stepdefinitions.api.RickAndMortySteps.consultoElPersonajeConID(java.lang.Integer)?[0m
+10:48:06.832 [Test worker] INFO   - ?[92m|-- Entonces el código de respuesta debería ser 200?[0m
+10:48:06.833 [Test worker] INFO   - ?[92m|---- Then El c&amp;oacute;digo de estado should be (200)?[0m
+  ?[32mEntonces ?[0m?[32mel código de respuesta debería ser ?[0m?[32m?[1m200?[0m ?[90m# stepdefinitions.api.RickAndMortySteps.elCodigoDeRespuestaDeberiaSer(java.lang.Integer)?[0m
+10:48:06.837 [Test worker] INFO   - ?[92m|-- Y el campo &quot;name&quot; debería ser &quot;Rick Sanchez&quot;?[0m
+10:48:06.838 [Test worker] INFO   - ?[92m|---- Then El campo name should be 'Rick Sanchez'?[0m
+  ?[32mY ?[0m?[32mel campo ?[0m?[32m?[1m&quot;name&quot;?[0m?[32m debería ser ?[0m?[32m?[1m&quot;Rick Sanchez&quot;?[0m    ?[90m# stepdefinitions.api.RickAndMortySteps.elCampoDeberiaSer(java.lang.String,java.lang.String)?[0m
+10:48:06.847 [Test worker] INFO   - ?[92m|-- Y el campo &quot;status&quot; debería ser &quot;Alive&quot;?[0m
+10:48:06.848 [Test worker] INFO   - ?[92m|---- Then El campo status should be 'Alive'?[0m
+  ?[32mY ?[0m?[32mel campo ?[0m?[32m?[1m&quot;status&quot;?[0m?[32m debería ser ?[0m?[32m?[1m&quot;Alive&quot;?[0m         ?[90m# stepdefinitions.api.RickAndMortySteps.elCampoDeberiaSer(java.lang.String,java.lang.String)?[0m
+10:48:06.857 [Test worker] INFO   - ?[92m|-- Y el campo &quot;species&quot; debería ser &quot;Human&quot;?[0m
+10:48:06.858 [Test worker] INFO   - ?[92m|---- Then El campo species should be 'Human'?[0m
+  ?[32mY ?[0m?[32mel campo ?[0m?[32m?[1m&quot;species&quot;?[0m?[32m debería ser ?[0m?[32m?[1m&quot;Human&quot;?[0m        ?[90m# stepdefinitions.api.RickAndMortySteps.elCampoDeberiaSer(java.lang.String,java.lang.String)?[0m
+10:48:06.867 [Test worker] INFO   - ?[92m
+  _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
+ |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 
+   | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
+   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
+
+Obtener un personaje específico
+----------------------------------------------------------------------?[0m
+
+@api @rickandmorty @search_by_name
+Escenario: Buscar personajes por nombre                         ?[90m# src/test/resources/features/api/RickAndMorty.feature:25?[0m
+10:48:06.875 [Test worker] INFO   - 
+  _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
+ |_   _| | __| / __| |_   _|   / __| |_   _|   /_\   | _ \ |_   _| | __| |   \ 
+   | |   | _|  \__ \   | |     \__ \   | |    / _ \  |   /   | |   | _|  | |) |
+   |_|   |___| |___/   |_|     |___/   |_|   /_/ \_\ |_|_\   |_|   |___| |___/ 
+
+Buscar personajes por nombre(api-de-rick-and-morty;buscar-personajes-por-nombre)
+--------------------------------------------------------------------------------
+10:48:06.883 [Test worker] INFO   - ?[92m|-- Cuando busco personajes con el nombre &quot;Morty&quot;?[0m
+10:48:06.885 [Test worker] INFO   - ?[92m|---- Usuario api get characters?[0m
+10:48:06.887 [Test worker] INFO   - ?[92m|------ Usuario API executes a GET on the resource /character?[0m
+  ?[32mCuando ?[0m?[32mbusco personajes con el nombre ?[0m?[32m?[1m&quot;Morty&quot;?[0m                 ?[90m# stepdefinitions.api.RickAndMortySteps.buscoPersonajesConElNombre(java.lang.String)?[0m
+10:48:07.171 [Test worker] INFO   - ?[92m|-- Entonces el código de respuesta debería ser 200?[0m
+10:48:07.172 [Test worker] INFO   - ?[92m|---- Then El c&amp;oacute;digo de estado should be (200)?[0m
+  ?[32mEntonces ?[0m?[32mel código de respuesta debería ser ?[0m?[32m?[1m200?[0m               ?[90m# stepdefinitions.api.RickAndMortySteps.elCodigoDeRespuestaDeberiaSer(java.lang.Integer)?[0m
+10:48:07.176 [Test worker] INFO   - ?[92m|-- Y la respuesta debería contener al menos 1 personaje?[0m
+10:48:07.177 [Test worker] INFO   - ?[92m|---- Then La cantidad de personajes should be a string containing '\'results\''?[0m
+  ?[32mY ?[0m?[32mla respuesta debería contener al menos ?[0m?[32m?[1m1?[0m?[32m personaje?[0m          ?[90m# stepdefinitions.api.RickAndMortySteps.laRespuestaDeberiaContenerAlMenosPersonaje(java.lang.Integer)?[0m
+10:48:07.181 [Test worker] INFO   - ?[92m|-- Y todos los personajes deberían contener &quot;Morty&quot; en su nombre?[0m
+10:48:07.182 [Test worker] INFO   - ?[92m|---- Then Los nombres contienen Morty should be a string containing 'Morty'?[0m
+  ?[32mY ?[0m?[32mtodos los personajes deberían contener ?[0m?[32m?[1m&quot;Morty&quot;?[0m?[32m en su nombre?[0m ?[90m# stepdefinitions.api.RickAndMortySteps.todosLosPersonajesDeberianContenerEnSuNombre(java.lang.String)?[0m
+10:48:07.186 [Test worker] INFO   - ?[92m
+  _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
+ |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 
+   | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
+   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
+
+Buscar personajes por nombre
+----------------------------------------------------------------------?[0m
+
+@api @rickandmorty @search_with_filters
+Escenario: Buscar personajes con filtros                     ?[90m# src/test/resources/features/api/RickAndMorty.feature:32?[0m
+10:48:07.196 [Test worker] INFO   - 
+  _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
+ |_   _| | __| / __| |_   _|   / __| |_   _|   /_\   | _ \ |_   _| | __| |   \ 
+   | |   | _|  \__ \   | |     \__ \   | |    / _ \  |   /   | |   | _|  | |) |
+   |_|   |___| |___/   |_|     |___/   |_|   /_/ \_\ |_|_\   |_|   |___| |___/ 
+
+Buscar personajes con filtros(api-de-rick-and-morty;buscar-personajes-con-filtros)
+--------------------------------------------------------------------------------
+10:48:07.204 [Test worker] INFO   - ?[92m|-- Cuando busco personajes con nombre &quot;Rick&quot; y estado &quot;Alive&quot;?[0m
+10:48:07.206 [Test worker] INFO   - ?[92m|---- Usuario api get characters?[0m
+10:48:07.212 [Test worker] INFO   - ?[92m|------ Usuario API executes a GET on the resource /character?[0m
+  ?[32mCuando ?[0m?[32mbusco personajes con nombre ?[0m?[32m?[1m&quot;Rick&quot;?[0m?[32m y estado ?[0m?[32m?[1m&quot;Alive&quot;?[0m ?[90m# stepdefinitions.api.RickAndMortySteps.buscoPersonajesConNombreYEstado(java.lang.String,java.lang.String)?[0m
+10:48:07.793 [Test worker] INFO   - ?[92m|-- Entonces el código de respuesta debería ser 200?[0m
+10:48:07.794 [Test worker] INFO   - ?[92m|---- Then El c&amp;oacute;digo de estado should be (200)?[0m
+  ?[32mEntonces ?[0m?[32mel código de respuesta debería ser ?[0m?[32m?[1m200?[0m            ?[90m# stepdefinitions.api.RickAndMortySteps.elCodigoDeRespuestaDeberiaSer(java.lang.Integer)?[0m
+10:48:07.800 [Test worker] INFO   - ?[92m|-- Y todos los personajes deberían tener estado &quot;Alive&quot;?[0m
+10:48:07.801 [Test worker] INFO   - ?[92m|---- Then El estado de los personajes should be a string containing '\'status\':\'Alive\''?[0m
+  ?[32mY ?[0m?[32mtodos los personajes deberían tener estado ?[0m?[32m?[1m&quot;Alive&quot;?[0m       ?[90m# stepdefinitions.api.RickAndMortySteps.todosLosPersonajesDeberianTenerEstado(java.lang.String)?[0m
+10:48:07.806 [Test worker] INFO   - ?[92m
+  _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
+ |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 
+   | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
+   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
+
+Buscar personajes con filtros
+----------------------------------------------------------------------?[0m
+
+@api @rickandmorty @character_not_found
+Escenario: Consultar personaje inexistente        ?[90m# src/test/resources/features/api/RickAndMorty.feature:38?[0m
+10:48:07.814 [Test worker] INFO   - 
+  _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
+ |_   _| | __| / __| |_   _|   / __| |_   _|   /_\   | _ \ |_   _| | __| |   \ 
+   | |   | _|  \__ \   | |     \__ \   | |    / _ \  |   /   | |   | _|  | |) |
+   |_|   |___| |___/   |_|     |___/   |_|   /_/ \_\ |_|_\   |_|   |___| |___/ 
+
+Consultar personaje inexistente(api-de-rick-and-morty;consultar-personaje-inexistente)
+--------------------------------------------------------------------------------
+10:48:07.821 [Test worker] INFO   - ?[92m|-- Cuando consulto el personaje con ID 99999?[0m
+10:48:07.823 [Test worker] INFO   - ?[92m|---- Usuario api get character by?[0m
+10:48:07.824 [Test worker] INFO   - ?[92m|------ Usuario API executes a GET on the resource /character/99999?[0m
+  ?[32mCuando ?[0m?[32mconsulto el personaje con ID ?[0m?[32m?[1m99999?[0m       ?[90m# stepdefinitions.api.RickAndMortySteps.consultoElPersonajeConID(java.lang.Integer)?[0m
+10:48:08.093 [Test worker] INFO   - ?[92m|-- Entonces el código de respuesta debería ser 404?[0m
+10:48:08.094 [Test worker] INFO   - ?[92m|---- Then El c&amp;oacute;digo de estado should be (404)?[0m
+  ?[32mEntonces ?[0m?[32mel código de respuesta debería ser ?[0m?[32m?[1m404?[0m ?[90m# stepdefinitions.api.RickAndMortySteps.elCodigoDeRespuestaDeberiaSer(java.lang.Integer)?[0m
+10:48:08.099 [Test worker] INFO   - ?[92m
+  _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
+ |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 
+   | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
+   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
+
+Consultar personaje inexistente
+----------------------------------------------------------------------?[0m
+</pre>
+<button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="class-stdout">Copy</button>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="https://www.gradle.org">Gradle 9.2.1</a> at 23/02/2026, 10:48:08 a. m.</p>
+</div>
+</div>
+</body>
+</html>
