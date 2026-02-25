@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features/web",
         glue = {"stepdefinitions", "stepdefinitions.conf"},
-        tags = "@web and not @ignore",
+        tags = "@login",
         plugin = {"pretty"}
 )
 
