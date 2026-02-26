@@ -39,8 +39,8 @@ public class Login implements Task {
         actor.attemptsTo(
 
                 // 🔥 Esperar que el campo usuario exista primero
-                WaitUntil.the(LoginPage.USERNAME_INPUT, isVisible())
-                        .forNoMoreThan(15).seconds(),
+                //WaitUntil.the(LoginPage.USERNAME_INPUT, isVisible())
+                       // .forNoMoreThan(15).seconds(),
 
                 Enter.theValue(credentials.getUsername()).into(LoginPage.USERNAME_INPUT),
                 Enter.theValue(credentials.getPassword()).into(LoginPage.PASSWORD_INPUT),

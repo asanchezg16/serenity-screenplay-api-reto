@@ -5,6 +5,7 @@ import com.choucair.web.questions.TheProductInCart;
 import com.choucair.web.tasks.AddProductToCart;
 import com.choucair.web.tasks.Login;
 import com.choucair.web.models.LoginModel;
+import com.choucair.web.tasks.NavigateTo;
 import com.choucair.web.userinterface.ProductsPage;
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Dado;
@@ -27,6 +28,7 @@ public class AddToCartStepDefinitions {
                 .build();
 
         theActorInTheSpotlight().attemptsTo(
+                NavigateTo.theLoginPage(),
                 Login.withCredentials(loginModel)
         );
     }
