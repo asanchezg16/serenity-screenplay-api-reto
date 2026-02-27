@@ -20,6 +20,7 @@ ext {
     junitPlatform='1.10.0'
     cucumberCoreVersion='7.14.0'
     lombokVersion   = "1.18.36"
+    cucumberPicoVersion = '7.14.0'
 
 }
 

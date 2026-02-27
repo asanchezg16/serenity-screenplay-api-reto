@@ -11,14 +11,16 @@ public class UpdateMovie implements Task {
 
     private final String movieId;
     private final MovieModel movie;
+    private final String token;
 
-    public UpdateMovie(String movieId, MovieModel movie) {
+    public UpdateMovie(String movieId, MovieModel movie, String token) {
         this.movieId = movieId;
         this.movie = movie;
+        this.token = token;
     }
 
-    public static UpdateMovie withId(String movieId, MovieModel movie) {
-        return new UpdateMovie(movieId, movie);
+    public static UpdateMovie withId(String movieId, MovieModel movie, String token) {
+        return new UpdateMovie(movieId, movie, token);
     }
 
     @Override
@@ -27,6 +29,7 @@ public class UpdateMovie implements Task {
                 Put.to("/movies/" + movieId)
                         .with(request -> request
                                 .contentType(JSON)
+                                .header("Authorization", "Bearer " + token)
                                 .body(movie))
         );
     }

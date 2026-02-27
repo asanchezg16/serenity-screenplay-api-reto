@@ -35,6 +35,16 @@ public class Hooks {
         theActorCalled("Usuario API").whoCan(CallAnApi.at(baseUrl));
     }
 
+    @Before(value = "@movies", order = 2)
+    public void setupMovieApiActor() {
+        String baseUrl = SystemEnvironmentVariables.createEnvironmentVariables()
+                .getProperty("rest.api.baseurl");
+        if (baseUrl == null) {
+            baseUrl = "http://localhost:3002/api";
+        }
+        theActorCalled("Usuario API").whoCan(CallAnApi.at(baseUrl));
+    }
+
     @Before(value = "@web", order = 1)
     public void setupWebActor() {
         theActorCalled("Usuario Web");

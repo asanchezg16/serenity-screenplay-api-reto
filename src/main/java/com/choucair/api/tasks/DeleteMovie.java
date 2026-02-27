@@ -7,19 +7,23 @@ import net.serenitybdd.screenplay.rest.interactions.Delete;
 public class DeleteMovie implements Task {
 
     private final String movieId;
+    private final String token;
 
-    public DeleteMovie(String movieId) {
+    public DeleteMovie(String movieId, String token) {
         this.movieId = movieId;
+        this.token = token;
     }
 
-    public static DeleteMovie withId(String movieId) {
-        return new DeleteMovie(movieId);
+    public static DeleteMovie withId(String movieId, String token) {
+        return new DeleteMovie(movieId, token);
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Delete.from("/movies/" + movieId)
+                        .with(request -> request
+                                .header("Authorization", "Bearer " + token))
         );
     }
 }

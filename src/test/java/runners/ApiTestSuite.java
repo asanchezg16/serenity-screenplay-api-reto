@@ -8,8 +8,9 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features/api",
         glue = {"stepdefinitions"},
-        tags = "@api and not @ignore",
+        tags = "@crud?movies",
         plugin = {"pretty"}
+
 )
 public class ApiTestSuite {
 

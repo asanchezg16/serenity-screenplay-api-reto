@@ -17,6 +17,7 @@ public class TheResponseBody implements Question<String> {
     }
 
     public static TheResponseBody asText() {
+
         return new TheResponseBody(null);
     }
 
