@@ -25,16 +25,6 @@ public class Hooks {
         }
     }
 
-    @Before(value = "@api", order = 1)
-    public void setupApiActor() {
-        String baseUrl = SystemEnvironmentVariables.createEnvironmentVariables()
-                .getProperty("rest.api.baseurl");
-        if (baseUrl == null) {
-            baseUrl = "https://rickandmortyapi.com/api";
-        }
-        theActorCalled("Usuario API").whoCan(CallAnApi.at(baseUrl));
-    }
-
     @Before(value = "@movies", order = 2)
     public void setupMovieApiActor() {
         String baseUrl = SystemEnvironmentVariables.createEnvironmentVariables()

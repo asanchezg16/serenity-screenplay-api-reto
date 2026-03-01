@@ -3,6 +3,7 @@ package com.choucair.api.tasks;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.rest.interactions.Delete;
+import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class DeleteMovie implements Task {
 
@@ -15,7 +16,7 @@ public class DeleteMovie implements Task {
     }
 
     public static DeleteMovie withId(String movieId, String token) {
-        return new DeleteMovie(movieId, token);
+        return instrumented(DeleteMovie.class, movieId, token);
     }
 
     @Override
@@ -23,7 +24,9 @@ public class DeleteMovie implements Task {
         actor.attemptsTo(
                 Delete.from("/movies/" + movieId)
                         .with(request -> request
-                                .header("Authorization", "Bearer " + token))
+                                .header("Authorization", "Bearer " + token)
+                                .header("Content-Type", "application/json")
+                        )
         );
     }
 }

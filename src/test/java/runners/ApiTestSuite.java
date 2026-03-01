@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features/api",
         glue = {"stepdefinitions"},
-        tags = "@crud?movies",
+        tags = "@apis",
         plugin = {"pretty"}
 
 )
