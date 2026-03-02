@@ -1,5 +1,5 @@
 #language: es
-@apis @movies
+@api @movies
 Característica: API de Movies
 
   Como usuario de la API de Movies
