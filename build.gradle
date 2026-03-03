@@ -54,6 +54,9 @@ dependencies {
             "org.junit.vintage:junit-vintage-engine:${junitPlatform}",
             "io.cucumber:cucumber-junit-platform-engine:${cucumberCoreVersion}",
             "io.cucumber:cucumber-core:${cucumberCoreVersion}"
+    testImplementation 'com.intuit.karate:karate-junit5:1.4.1'
+    testImplementation 'org.junit.vintage:junit-vintage-engine:5.10.0'
+    testImplementation 'com.intuit.karate:karate-junit5:1.4.1'
     //implementation files('src/lib/libreriaMovilScreenPlay-2.0.2.jar')
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
     compileOnly "org.projectlombok:lombok:${lombokVersion}"
@@ -64,7 +67,7 @@ dependencies {
 }
 
 test {
-   // useJUnitPlatform()
+    useJUnitPlatform()
     systemProperty "serenity.logging", "VERBOSE"
     systemProperty "serenity.verbose.logging", "true"
 

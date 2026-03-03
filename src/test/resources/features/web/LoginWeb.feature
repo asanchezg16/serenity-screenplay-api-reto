@@ -14,3 +14,4 @@ Característica: Login en aplicación web
       | username      | password     |
       | standard_user | secret_sauce |
     Entonces debería ver la página de productos
+
